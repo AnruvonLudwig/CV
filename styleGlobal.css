@@ -1,16 +1,12 @@
 /* =====================================================
-   CV.css — catppuccin theme, shared with Globle.css
-   Auto light/dark via prefers-color-scheme for now.
-   To add a manual toggle later: set data-theme="light"
-   or data-theme="dark" on <html> via JS, then add
-   [data-theme="dark"] / [data-theme="light"] blocks
-   below that mirror these two media queries.
+   CV.css — catppuccin theme
    ===================================================== */
 
 @media (prefers-color-scheme: dark){
 :root{
     --Rosewater: #f5e0dc;
     --Peach:#fab387;
+    --Yellow:#f9e2af;
     --Mauve:#cba6f7;
     --Red:#f38ba8;
     --Green:#a6e3a1;
@@ -31,6 +27,7 @@
 :root{
     --Rosewater: #dc8a78;
     --Peach:#fe640b;
+    --Yellow:#df8e1d;
     --Mauve:#8839ef;
     --Red:#d20f39;
     --Green:#40a02b;
@@ -69,7 +66,7 @@ a{
     color: var(--Blue);
 }
 
-/* ---------- Nav (matches Home.html banner) ---------- */
+/* ---------- Nav ---------- */
 .banner{
     display: flex;
     justify-content: space-between;
@@ -130,10 +127,25 @@ a{
 .cv-section{
     margin-bottom: 36px;
 }
+.cv-section p + p{
+    margin-top: 12px;
+}
 .cv-section h2{
     border-bottom: 1px solid var(--Overlay);
     padding-bottom: 6px;
     margin-bottom: 16px;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .cv-entry{
@@ -172,6 +184,58 @@ a{
     border-radius: 6px;
     padding: 4px 12px;
     font-size: 0.9rem;
+}
+
+/* Skill level colour coding (also announced via .sr-only text and title) */
+.skills-list li{
+    border-left: 3px solid var(--Overlay);
+}
+.skills-list li.level-basic-intermediate{
+    background-color: color-mix(in srgb, var(--Yellow) 15%, var(--Surface));
+    border-left-color: var(--Yellow);
+}
+.skills-list li.level-intermediate{
+    background-color: color-mix(in srgb, var(--Green) 15%, var(--Surface));
+    border-left-color: var(--Green);
+}
+.skills-list li.level-adaptive{
+    background-color: transparent;
+    border-left: 3px dashed var(--Mauve);
+    color: var(--SubText);
+    font-style: italic;
+}
+
+.skills-legend{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    padding: 0;
+    margin: 0 0 20px;
+    font-size: 0.85rem;
+    color: var(--SubText);
+}
+.skills-legend li{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.skills-legend li::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    background-color: var(--Overlay);
+}
+.skills-legend li.level-basic-intermediate::before{
+    background-color: var(--Yellow);
+}
+.skills-legend li.level-intermediate::before{
+    background-color: var(--Green);
+}
+.skills-legend li.level-adaptive::before{
+    background-color: transparent;
+    border: 2px dashed var(--Mauve);
 }
 
 .skills-group{
@@ -229,6 +293,57 @@ a{
     background-color: color-mix(in srgb, var(--Overlay) 15%, transparent);
     border-left: 3px dashed var(--Overlay);
     color: var(--SubText);
+}
+
+/* "What I learnt" disclosure inside a project card */
+.project-learnt{
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid color-mix(in srgb, var(--Overlay) 40%, transparent);
+}
+.project-learnt summary{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--Mauve);
+    list-style: none;
+    border-radius: 4px;
+}
+.project-learnt summary::-webkit-details-marker{
+    display: none;
+}
+.project-learnt summary::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 6px solid currentColor;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+.project-learnt[open] summary::before{
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid currentColor;
+    border-bottom: 0;
+}
+.project-learnt summary:hover{
+    color: var(--Lavender);
+}
+.project-learnt summary:focus-visible{
+    outline: 2px solid var(--Mauve);
+    outline-offset: 3px;
+}
+.project-learnt ul{
+    margin: 10px 0 2px;
+    padding-left: 20px;
+    color: var(--SubText);
+    font-size: 0.92rem;
+}
+.project-learnt li{
+    margin-bottom: 6px;
 }
 
 .contact-list{
