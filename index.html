@@ -11,7 +11,8 @@
         <h1 style="font-size:1.3rem;">Anru von Ludwig</h1>
         <nav class="bannernav">
             <ul>
-                <li><a href="Home.html">Home</a></li>
+                <!-- Create a home page -->
+                <li><a href="index.html">Home</a></li>
                 <li><a href="index.html" aria-current="page">CV</a></li>
                 <!-- extra section: swap for Projects, Portfolio, Contact, etc. -->
                 <li><a href="#">Coming Soon</a></li>
@@ -26,58 +27,69 @@
             <p>Bachelor of Computing  &middot; Stellenbosch, South  Africa</p>
         </div>
 
-        <p class="under-construction">
-            🚧 This CV is a work in progress. Check back for updates.
-        </p>
-
         <!-- ABOUT -->
         <section class="cv-section" id="about">
             <h2>About</h2>
-            <p>I'm studying towards a Bachelor of Computing at Belgium Campus. 
-            My main interest is software development, particularly backend work — haven't dug into data science yet.</p>
+            <p>I am studying towards a Bachelor of Computing at Belgium Campus. Software engineering and development best describe me, although I find that defining myself by a specific area somewhat limiting.</p>
+            <p>I am interested in creating tools that solve problems. The type of tool or problem can vary widely: from a mobile app for grocery shopping to a CLI tool that streamlines building and managing legacy C#/.NET projects on Linux. What interests me is the problem itself and whether I can develop a comprehensive mental model of it and visualise how the tool will be used.</p>
+            <p>I have found that I am particularly good at finding gaps and contradictions in concepts because I try to internalise them and build a comprehensive mental model. The downside is that this process becomes slower as concepts grow in complexity, so I tend to find shortcuts to speed things up, but doing so can reduce my ability to find gaps in logic.</p>
+            <p>Outside of computing, I do archery for the love of the art. I have a love-hate relationship with how it challenges my tendency to simply do, or to hyperfocus on a single problem and lose sight of everything else. A good shot requires my mind and body to be aligned as a whole while still being attentive to each individual step.</p>
+            <p>I use Linux because Linux gives me problems, problems that I am sometimes able to develop my own solutions for.</p>
         </section>
 
         <!-- EDUCATION -->
         <section class="cv-section" id="education">
             <h2>Education</h2>
-            <div class="cv-entry">
+            <article class="cv-entry">
+                <div class="cv-entry-heading">
+                    <span class="place">Sasolburg High School</span>
+                    <span class="date">2020 – 2024</span>
+                </div>
+            </article>
+            <article class="cv-entry">
                 <div class="cv-entry-heading">
                     <span class="place">Belgium Campus</span>
-                    <span class="date">2025 – ...</span>
+                    <span class="date">2025 – 2028</span>
                 </div>
-                <p>--</p>
-            </div>
+            </article>
         </section>
 
         <!-- EXPERIENCE -->
         <section class="cv-section" id="experience">
             <h2>Experience</h2>
-            <p>Nothing formal on record yet. In the meantime, I'm learning by building — see <a href="#projects">Projects</a> for what I'm currently working on (some half-finished, some not).</p>
+            <p>No formal work experience as of yet. I am currently gaining experience from the <a href="#projects">projects</a> I am working on.</p>
         </section>
 
         <!-- SKILLS -->
         <section class="cv-section" id="skills">
             <h2>Skills</h2>
 
+            <ul class="skills-legend" aria-label="Skill level key">
+                <li class="level-basic-intermediate">Basic–Intermediate</li>
+                <li class="level-intermediate">Intermediate</li>
+            </ul>
+
             <div class="skills-group">
                 <h3>Languages &amp; Frameworks</h3>
                 <ul class="skills-list">
-                    <li>Dart / Flutter</li>
-                    <li>C#</li>
-                    <li>JavaScript / HTML / CSS</li>
+                    <li class="level-intermediate" title="Intermediate"><span class="sr-only">Intermediate: </span>Flutter / Dart / Drift</li>
+                    <li class="level-intermediate" title="Intermediate"><span class="sr-only">Intermediate: </span>C#</li>
+                    <li class="level-intermediate" title="Intermediate"><span class="sr-only">Intermediate: </span>HTML / CSS / JavaScript</li>
+                    <li class="level-intermediate" title="Intermediate"><span class="sr-only">Intermediate: </span>SQL</li>
+                    <li class="level-intermediate" title="Intermediate"><span class="sr-only">Intermediate: </span>Bash</li>
+                    <li class="level-basic-intermediate" title="Basic–Intermediate"><span class="sr-only">Basic–Intermediate: </span>Regex</li>
                 </ul>
             </div>
 
             <div class="skills-group">
                 <h3>Tools &amp; Practices</h3>
                 <ul class="skills-list">
-                    <li>Git</li>
-                    <li>Basic code reviewing</li>
-                    <li>Linux terminal</li>
-                    <li>Dev environment setup (VS Code, Linux)</li>
-                    <li>Database design (SQL / Drift)</li>
-                    <li>OOP design</li>
-                    <li>CLI tool development</li>
+                    <li class="level-intermediate" title="Intermediate"><span class="sr-only">Intermediate: </span>Git</li>
+                    <li class="level-basic-intermediate" title="Basic–Intermediate"><span class="sr-only">Basic–Intermediate: </span>GitHub</li>
+                    <li class="level-basic-intermediate" title="Basic–Intermediate"><span class="sr-only">Basic–Intermediate: </span>Vim</li>
+                    <li class="level-basic-intermediate" title="Basic–Intermediate"><span class="sr-only">Basic–Intermediate: </span>SQL Server</li>
+                    <li class="level-intermediate" title="Intermediate"><span class="sr-only">Intermediate: </span>Object-Oriented Design</li>
+                    <li class="level-adaptive">What the next problem requires</li>
                 </ul>
             </div>
         </section>
@@ -85,41 +97,83 @@
         <!-- PROJECTS -->
         <section class="cv-section" id="projects">
             <h2>Projects</h2>
-            <ul class="projects-list">
+            <p>Most projects are currently private as I am not yet proud of the code, but the experience and value I have gained from them are still worth showing.</p>
+            <ul class="projects-list" style="margin-top:16px;">
                 <li class="project-card">
                     <h3>Lardy</h3>
-                    <p>Shopping list and larder stock tracking app. Built with Flutter/Dart and a Drift database. The single shopping list works well enough for daily use.</p>
+                    <p>A shopping list and larder stock-tracking app built with Flutter/Dart and a Drift database. The single-list shopping feature is functional enough for everyday use.</p>
                     <p class="project-link status-private">Personal · <a href="https://github.com/Valgerice/Lardy">GitHub</a></p>
+                    <details class="project-learnt">
+                        <summary>What I learnt</summary>
+                        <ul>
+                            <li>How not to structure a layered architecture.</li>
+                            <li>A project can stall when a feature reaches the point of being “good enough” and further development requires reworking existing code.</li>
+                            <li>Trying to take on too much at once while learning a new concept can slow a project down significantly.</li>
+                        </ul>
+                    </details>
                 </li>
-
                 <li class="project-card">
                     <h3>C# Helper</h3>
-                    <p>A CLI tool to help configure VS Code, scaffold classes, and work with legacy .NET projects on Linux. Written in C#. Very early days.</p>
+                    <p>A CLI tool for configuring VS Code, scaffolding classes, and working with legacy .NET projects on Linux. Written in C#.</p>
                     <p class="project-link status-private">Private · <a href="https://github.com/AnruvonLudwig/chelper">GitHub</a></p>
+                    <details class="project-learnt">
+                        <summary>What I learnt</summary>
+                        <ul>
+                            <li>It is easy to fall into the trap of asking AI to develop something just to get it done.</li>
+                            <li>How to write and structure unit tests.</li>
+                            <li>How relying heavily on AI can make it easier to overlook design decisions that I should understand myself.</li>
+                        </ul>
+                    </details>
                 </li>
-
                 <li class="project-card">
                     <h3>Bug Tracker</h3>
-                    <p>A basic bug-tracking website, built as a university group project with JavaScript, CSS, and HTML. Submitted in a messy state — I'd like to clean it up and keep building, just haven't found the motivation yet.</p>
+                    <p>A basic bug-tracking website built as a university group project using JavaScript, CSS, and HTML. Submitted in a messy state, but ultimately met the requirements of the marking rubric.</p>
                     <p class="project-link status-private">Private · <a href="https://github.com/AnruvonLudwig/BugTracker">GitHub</a></p>
+                    <details class="project-learnt">
+                        <summary>What I learnt</summary>
+                        <ul>
+                            <li>Avoiding the leadership role when it is needed can lead to compromises that ultimately affect the quality of the project.</li>
+                            <li>Not fully taking on the leadership role made it harder to steer the project towards what I originally wanted to build.</li>
+                            <li>Sometimes you have to accept a result that falls short of what you originally envisioned.</li>
+                        </ul>
+                    </details>
                 </li>
-
                 <li class="project-card">
                     <h3>Festival Console</h3>
-                    <p>A C# console application simulating a festival with events, exploring OOP and basic multi-threading. University group project I want to keep extending.</p>
+                    <p>A C# console application simulating a festival and its events, exploring object-oriented programming and basic multi-threading. Developed as a university group project.</p>
                     <p class="project-link status-private">Private · <a href="https://github.com/AnruvonLudwig/FestivalConsole">GitHub</a></p>
+                    <details class="project-learnt">
+                        <summary>What I learnt</summary>
+                        <ul>
+                            <li>How to structure a layered architecture more effectively than before.</li>
+                            <li>Introducing a new concept into a group project without first establishing a solid foundation can lead to late nights learning the concept while building the project skeleton.</li>
+                            <li>Clear communication and explanation are important when introducing unfamiliar concepts.</li>
+                            <li>A loosely defined scope combined with capable developers can cause a project to grow rapidly in complexity.</li>
+                        </ul>
+                    </details>
                 </li>
-
                 <li class="project-card">
                     <h3>C# Menu System</h3>
-                    <p>A planned split-off from Festival Console: a reasonably robust menu system built on IViews, with navigation loosely inspired by Flutter's. Not yet started as its own project.</p>
-                    <p class="project-link status-pending">Public · coming soon</p>
+                    <p>A split-off from Festival Console: a TUI menu system using IViews and a navigator class, loosely inspired by concepts from Flutter's UI architecture.</p>
+                    <p class="project-link status-public">Public · <a href="https://github.com/AnruvonLudwig/CsharpMenuSystem">GitHub</a></p>
                 </li>
-
                 <li class="project-card">
                     <h3>Dotfiles</h3>
-                    <p>A living repo of Linux config files and setup guides, actively used across 4 devices with a fairly complex branching setup and a shared main branch.</p>
+                    <p>A living repository of Linux configuration files and setup guides, actively used across four devices. It has a relatively complex branching setup to accommodate the differences between each environment.</p>
                     <p class="project-link status-private">Private · GitHub redacted for security</p>
+                    <details class="project-learnt">
+                        <summary>What I learnt</summary>
+                        <ul>
+                            <li>A lot about Git.</li>
+                            <li>Some things are too dynamic to be tracked and conventions should not be made on the fly.</li>
+                            <li>Managing different production environments and software versions is an area I would have to develop further.</li>
+                        </ul>
+                    </details>
+                </li>
+                <li class="project-card">
+                    <h3>Project Helper</h3>
+                    <p>A proposed CLI tool for planning and tracking personal projects in a way that fits how I work. I prefer keeping a terminal open and limiting the number of windows outside my web browser and VS Code, so a CLI is the natural fit.</p>
+                    <p class="project-link status-pending">Public · coming soon</p>
                 </li>
                 <li class="project-card">
                     <h3>Failover Router</h3>
